@@ -1,4 +1,4 @@
-from fastapi import APIRouter, Depends, HTTPException, status
+from fastapi import APIRouter, Depends, HTTPException
 from fastapi.security import OAuth2PasswordBearer, OAuth2PasswordRequestForm
 from jose import JWTError, jwt
 from datetime import datetime, timedelta
@@ -6,16 +6,15 @@ from passlib.context import CryptContext
 
 from app.config import SECRET_KEY, ALGORITHM, ACCESS_TOKEN_EXPIRE_MINUTES
 
+router = APIRouter(prefix="/auth")  # <-- ✅ THIS is important
 
-router = APIRouter()
 pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl="/auth/token")
 
 # Dummy user
 fake_user = {
     "username": "admin",
-   "hashed_password": "$2b$12$EixZaYVK1fsbw1ZfbX3OXePaWxn96p36lj8lvZy6P/6nNDOZxXWm"  # bcrypt hash of 'admin123'
-
+    "hashed_password": "$2b$12$EixZaYVK1fsbw1ZfbX3OXePaWxn96p36lj8lvZy6P/6nNDOZxXWm"
 }
 
 def verify_password(plain_password, hashed_password):
@@ -34,7 +33,7 @@ def create_access_token(data: dict, expires_delta: timedelta):
     to_encode.update({"exp": expire})
     return jwt.encode(to_encode, SECRET_KEY, algorithm=ALGORITHM)
 
-@router.post("/auth/token")
+@router.post("/token")  # <-- Final route is /auth/token
 def login(form_data: OAuth2PasswordRequestForm = Depends()):
     user = authenticate_user(form_data.username, form_data.password)
     if not user:

@@ -33,6 +33,7 @@ app.add_middleware(
 # Include authentication router
 app.include_router(auth_router)
 
+
 # Health check
 @app.get("/health")
 def health():

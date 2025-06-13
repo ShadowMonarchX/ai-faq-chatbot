@@ -1,13 +1,7 @@
-# backend/app/chat.py
-
 from langchain_huggingface import HuggingFaceEmbeddings, HuggingFacePipeline
 from langchain_chroma import Chroma
-
-from langchain_community.vectorstores import Chroma
-from langchain_community.llms import HuggingFacePipeline
-from transformers import pipeline
 from langchain.chains import RetrievalQA
-
+from transformers import pipeline
 
 # 1. Setup embedding model
 embedding_model = HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2")
@@ -26,7 +20,7 @@ retriever = vectordb.as_retriever(search_kwargs={"k": 3})
 # 4. Setup LLM using HuggingFace pipeline
 llm_pipeline = pipeline(
     "text-generation",
-    model="distilgpt2",  # Replace with a better model if available
+    model="distilgpt2",
     max_new_tokens=100,
     do_sample=True,
     temperature=0.7
@@ -46,3 +40,8 @@ qa_chain = RetrievalQA.from_chain_type(
 def ask_question(query: str) -> str:
     result = qa_chain(query)
     return result["result"]
+
+if __name__ == "__main__":
+    question = "What is your privacy policy?"
+    answer = ask_question(question)
+    print("Answer:", answer)
