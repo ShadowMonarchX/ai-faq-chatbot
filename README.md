@@ -1,4 +1,4 @@
-## ✅ `README.md`
+✅ `README.md`
 
 ````markdown
 # 🤖 AI FAQ Chatbot (LangChain + FastAPI)
@@ -15,7 +15,7 @@ This project is an end-to-end **AI-powered FAQ chatbot** that can answer domain-
 
 ---
 
-## 🚀 Features
+🚀 Features
 
 - 🔐 User authentication with JWT tokens
 - 🧠 Vector-based search over your own data
@@ -25,7 +25,7 @@ This project is an end-to-end **AI-powered FAQ chatbot** that can answer domain-
 
 ---
 
-## 🧩 Tech Stack
+🧩 Tech Stack
 
 | Component     | Tool                          |
 |---------------|-------------------------------|
@@ -38,23 +38,23 @@ This project is an end-to-end **AI-powered FAQ chatbot** that can answer domain-
 
 ---
 
-## 🛠️ Installation & Setup
+🛠️ Installation & Setup
 
-### 1. 📦 Clone the Repo
+ 1. 📦 Clone the Repo
 
 ```bash
 git clone https://github.com/yourusername/ai-faq-chatbot.git
 cd ai-faq-chatbot
 ````
 
-### 2. 🐍 Create & Activate Virtual Env
+2. 🐍 Create & Activate Virtual Env
 
 ```bash
 python3 -m venv venv
 source venv/bin/activate  # On Windows: venv\Scripts\activate
 ```
 
-### 3. 📚 Install Dependencies
+3. 📚 Install Dependencies
 
 ```bash
 pip install -r requirements.txt
@@ -74,7 +74,7 @@ pip install --upgrade torch torchvision torchaudio
 
 ---
 
-### 4. ⚙️ Environment Variables
+ 4. ⚙️ Environment Variables
 
 Edit `backend/app/config.py` and set your:
 
@@ -86,7 +86,7 @@ ACCESS_TOKEN_EXPIRE_MINUTES = 30
 
 ---
 
-### 5. 🧠 Prepare Vector DB
+5. 🧠 Prepare Vector DB
 
 Before running the app, ensure you have ingested your documents into ChromaDB. If not, create an ingestion script and run it once.
 
@@ -96,7 +96,7 @@ python ingest.py  # Make sure it saves to `vectorstore/chroma/`
 
 ---
 
-### 6. 🚦 Run Backend API
+6. 🚦 Run Backend API
 
 ```bash
 uvicorn backend.app.main:app --reload
@@ -106,7 +106,7 @@ This will start the FastAPI app at: [http://127.0.0.1:8000](http://127.0.0.1:800
 
 ---
 
-### 7. 💻 Open the Frontend
+7. 💻 Open the Frontend
 
 The root FastAPI path serves the HTML UI from `frontend/`:
 
@@ -121,7 +121,7 @@ Just open [http://localhost:8000](http://localhost:8000) in your browser.
 
 ---
 
-## 🔐 Authentication
+🔐 Authentication
 
 Use the default credentials to log in:
 
@@ -132,7 +132,7 @@ It will return a `Bearer Token` used in headers for accessing the `/chat` route.
 
 ---
 
-## 🐳 Docker (Optional)
+🐳 Docker (Optional)
 
 To run inside Docker:
 
@@ -143,7 +143,7 @@ docker run -p 8000:8000 ai-faq-chatbot
 
 ---
 
-## 📁 Project Structure
+📁 Project Structure
 
 ```
 ai-faq-chatbot/
@@ -168,19 +168,18 @@ ai-faq-chatbot/
 ```
 
 ---
-
-## 📜 License
+📜 License
 
 This project is licensed under the **MIT License**. See [`LICENSE`](./LICENSE) for details.
 
 ---
-
-## 🤝 Contributing
+ 
+🤝 Contributing
 
 PRs welcome! If you find bugs or want to suggest improvements, open an issue or submit a pull request.
 
 ---
 
-## 📬 Contact
+📬 Contact
 
 Made with ❤️ by [Jenish Shekhada](mailto:your-email@example.com)
