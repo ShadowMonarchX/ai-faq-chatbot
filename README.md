@@ -1,7 +1,7 @@
 ✅ `README.md`
 
 ````markdown
-# 🤖 AI FAQ Chatbot (LangChain + FastAPI)
+🤖 AI FAQ Chatbot (LangChain + FastAPI)
 
 This project is an end-to-end **AI-powered FAQ chatbot** that can answer domain-specific questions using a custom knowledge base. It uses:
 
