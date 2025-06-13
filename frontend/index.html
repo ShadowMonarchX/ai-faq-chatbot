@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>AI FAQ Chatbot</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>💬 AI FAQ Chatbot</h1>
+    <input type="text" id="username" placeholder="Username" />
+    <input type="password" id="password" placeholder="Password" />
+    <button onclick="login()">🔐 Login</button>
+
+    <div id="chatbox">
+      <input type="text" id="question" placeholder="Ask your question..." />
+      <button onclick="sendQuery()">➡️ Ask</button>
+      <div id="response"></div>
+    </div>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
