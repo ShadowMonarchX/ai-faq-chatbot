@@ -182,4 +182,4 @@ PRs welcome! If you find bugs or want to suggest improvements, open an issue or 
 
 📬 Contact
 
-Made with ❤️ by [Jenish Shekhada](mailto:your-email@example.com)
+Made with by [Jenish Shekhada](mailto:your-email@example.com)
