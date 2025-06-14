@@ -38,8 +38,15 @@ ds.to_csv("faq_dataset.csv", index=False)
 
 # import json
 
-# # Save to a JSON file
-# with open("processed_faq.json", "w") as f:
+# with open("processed_faq.jsonl", "w") as f:
 #     for item in cleaned_dataset:
-#         json.dump(item, f)
+#         json.dump({"prompt": item["prompt"], "response": item["response"]}, f)
 #         f.write("\n")
+
+# from datasets import load_dataset
+
+# ds = load_dataset("bitext/Bitext-customer-support-llm-chatbot-training-dataset")
+
+# import pandas as pd
+
+# df = pd.read_csv("hf://datasets/bitext/Bitext-customer-support-llm-chatbot-training-dataset/Bitext_Sample_Customer_Support_Training_Dataset_27K_responses-v11.csv")
